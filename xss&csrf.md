@@ -8,9 +8,9 @@ CSRF攻击能劫持终端用户在已登录的Web站点上执行本意操作。�
 
 # 实践
 
-现在有一个页面http://A.com/me，是一个个人中心页面，这里放了用户收藏的资源，
+现在有一个页面<http://A.com/me>，是一个个人中心页面，这里放了用户收藏的资源，
 
-可以进行取消收藏的操作，对应的请求是http://A.com/cancelfavor?eid=44ce2275eff9aef8951e0669，如果攻击者利用页面漏洞注入了代码，使用户点击某处进入有恶意代码的页面http://B.com，在B页面发送这个取消收藏的请求就可以删除用户收藏的资源。
+可以进行取消收藏的操作，对应的请求是<http://A.com/cancelfavor?eid=44ce2275eff9aef8951e0669>，如果攻击者利用页面漏洞注入了代码，使用户点击某处进入有恶意代码的页面<http://B.com>，在B页面发送这个取消收藏的请求就可以删除用户收藏的资源。
 
 ![mycenter](https://github.com/tomorrowface/tech-stack/blob/master/images/mycenter.png?raw=true)
 
