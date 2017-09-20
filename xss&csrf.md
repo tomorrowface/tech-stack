@@ -12,17 +12,17 @@ CSRF攻击能劫持终端用户在已登录的Web站点上执行本意操作。�
 
 可以进行取消收藏的操作，对应的请求是http://A.com/cancelfavor?eid=44ce2275eff9aef8951e0669，如果攻击者利用页面漏洞注入了代码，使用户点击某处进入有恶意代码的页面http://B.com，在B页面发送这个取消收藏的请求就可以删除用户收藏的资源。
 
-![mycenter](https://github.com/tomorrowface/tech-stack/images/mycenter.png)
+![mycenter](https://github.com/tomorrowface/tech-stack/blob/master/images/mycenter.png?raw=true)
 
-以下是在B页面发送的请求，可以通过js或img的方式构造请求，为了能看到响应数据，采用了js构造的方法：![csrf-result](https://github.com/tomorrowface/tech-stack/images/csrf-result2.png)
+以下是在B页面发送的请求，可以通过js或img的方式构造请求，为了能看到响应数据，采用了js构造的方法：![csrf-result](https://github.com/tomorrowface/tech-stack/blob/master/images/csrf-result2.png?raw=true)
 
 看接口返回true，可知道成功删除，再看页面里真的少了一个资源。
 
-![mycenter](https://github.com/tomorrowface/tech-stack/images/csrf-result.png)
+![mycenter](https://github.com/tomorrowface/tech-stack/blob/master/images/csrf-result.png?raw=true)
 
 以下这张图是成功的关键，这些cookie都是A站点的cookie，在B页面中请求A站点接口，会附带上A站点的cookie，cookie里包含用户重要的信息，服务器接收到这些信息后误以为是用户本人发送，执行取消收藏操作，结果用户收藏的资源就被恶意删除了。
 
-![cookie](https://github.com/tomorrowface/tech-stack/images/cookie.png)
+![cookie](https://github.com/tomorrowface/tech-stack/blob/master/images/cookie.png?raw=true)
 
 # 解决
 
